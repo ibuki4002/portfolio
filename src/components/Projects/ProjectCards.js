@@ -1,40 +1,38 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import { Avatar, Card } from 'antd';
+import { AiOutlineGithub, } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
-import { BsGithub } from "react-icons/bs";
+import { BsFillShareFill } from "react-icons/bs";
+
+const { Meta } = Card;
 
 function ProjectCards(props) {
+  const { image, title, description } = props;
+
   return (
-    <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
-        </Card.Text>
-        <Button variant="primary" href={props.ghLink} target="_blank">
-          <BsGithub /> &nbsp;
-          {props.isBlog ? "Blog" : "GitHub"}
-        </Button>
-        {"\n"}
-        {"\n"}
-
-        {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
-
-        {!props.isBlog && props.demoLink && (
-          <Button
-            variant="primary"
-            href={props.demoLink}
-            target="_blank"
-            style={{ marginLeft: "10px" }}
-          >
-            <CgWebsite /> &nbsp;
-            {"Demo"}
-          </Button>
-        )}
-      </Card.Body>
+    <Card
+      style={{
+        width: 300,
+      }}
+      cover={
+        <img
+          alt="example"
+          src={image}
+        />
+      }
+      actions={[
+        <AiOutlineGithub key="setting" style={{ fontSize: '24px' }} />,
+        <CgWebsite key="edit" style={{ fontSize: '24px' }} />,
+        <BsFillShareFill key="ellipsis" style={{ fontSize: '24px' }} />,
+      ]}
+    >
+      <Meta
+        avatar={<Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />}
+        title={title}
+        description={description}
+      />
     </Card>
   );
 }
+
 export default ProjectCards;

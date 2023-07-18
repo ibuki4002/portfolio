@@ -1,40 +1,28 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
+import { FaTruckArrowRight } from "react-icons/fa6";
 
 function AboutCard() {
   return (
-    <Card className="quote-card-view">
-      <Card.Body>
+    <Card className="quote-card-view" >
+      <Card.Body style={{ color: "black" }}>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Soumyajit Behera </span>
-            from <span className="purple"> Bhubaneswar, India.</span>
-            <br /> I am a final year student pursuing an Integrated MSc (IMSc)
-            in Maths and Computing at BIT Mesra.
-            <br />
-            Additionally, I am currently employed as a software developer at
-            Juspay.
-            <br />
-            <br />
-            Apart from coding, some other activities that I love to do!
+            三重大学の四年生の田中伊吹と申します。2022年の12月にプロジェクトMに入社し、そこから主にWeb制作を中心に活動しています。
+            <br />最近はreactを主に勉強していて、このサイトもreactで作成しました。
+            <br />私はWeb制作において、次の2つのことを大切にしています。
           </p>
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games
+              <FaTruckArrowRight /> シンプルで見やすいデザイン
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs
+              <FaTruckArrowRight /> 使いやすいUI/UX
             </li>
-            <li className="about-activity">
-              <ImPointRight /> Travelling
-            </li>
+
           </ul>
 
-          <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
-          </p>
-          <footer className="blockquote-footer">Soumyajit</footer>
         </blockquote>
       </Card.Body>
     </Card>
